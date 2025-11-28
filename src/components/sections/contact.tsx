@@ -6,8 +6,8 @@ import {
   IconMail,
   IconBrandLinkedin,
   IconBrandGithub,
-  IconPhone,
   IconArrowUpRight,
+  IconCalendar,
 } from "@tabler/icons-react";
 
 const contactLinks = [
@@ -17,6 +17,13 @@ const contactLinks = [
     href: "mailto:isakshamgoyal@gmail.com",
     icon: <IconMail className="h-6 w-6" />,
     color: "from-red-500/20 to-orange-500/10",
+  },
+  {
+    title: "Book a Meeting",
+    value: "Schedule a call",
+    href: "https://cal.com/isakshamgoyal/book-a-meet",
+    icon: <IconCalendar className="h-6 w-6" />,
+    color: "from-indigo-500/20 to-purple-500/10",
   },
   {
     title: "LinkedIn",
@@ -32,18 +39,11 @@ const contactLinks = [
     icon: <IconBrandGithub className="h-6 w-6" />,
     color: "from-purple-500/20 to-pink-500/10",
   },
-  {
-    title: "Phone",
-    value: "+91 9997781991",
-    href: "tel:+919997781991",
-    icon: <IconPhone className="h-6 w-6" />,
-    color: "from-green-500/20 to-emerald-500/10",
-  },
 ];
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative px-6 py-24">
+    <section id="contact" className="relative px-4 py-16 sm:px-6 sm:py-24">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
 
@@ -59,7 +59,7 @@ export function ContactSection() {
           <span className="mb-4 inline-block rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm">
             Get In Touch
           </span>
-          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
             Let&apos;s <span className="gradient-text">Connect</span>
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
@@ -69,7 +69,7 @@ export function ContactSection() {
         </motion.div>
 
         {/* Contact cards grid */}
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
           {contactLinks.map((link, index) => (
             <motion.a
               key={index}
@@ -87,17 +87,17 @@ export function ContactSection() {
               className="group"
             >
               <SpotlightCard className="h-full transition-all duration-300 hover:border-primary/50">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${link.color} text-foreground transition-transform duration-300 group-hover:scale-110`}
+                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${link.color} text-foreground transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12`}
                   >
                     {link.icon}
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-muted-foreground">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs text-muted-foreground sm:text-sm">
                       {link.title}
                     </p>
-                    <p className="font-medium text-foreground">{link.value}</p>
+                    <p className="truncate text-sm font-medium text-foreground sm:text-base">{link.value}</p>
                   </div>
                   <IconArrowUpRight className="h-5 w-5 text-muted-foreground opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
@@ -112,11 +112,21 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a
+            href="https://cal.com/isakshamgoyal/book-a-meet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glow-primary group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 sm:px-8 sm:py-4 sm:text-base"
+          >
+            <IconCalendar className="h-5 w-5" />
+            Book a Meeting
+            <IconArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
+          <a
             href="mailto:isakshamgoyal@gmail.com"
-            className="glow-primary group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card sm:px-8 sm:py-4 sm:text-base"
           >
             <IconMail className="h-5 w-5" />
             Send me an email

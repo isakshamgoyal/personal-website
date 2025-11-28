@@ -96,7 +96,7 @@ const technologies = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative px-6 py-24">
+    <section id="skills" className="relative px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <motion.div
@@ -109,7 +109,7 @@ export function SkillsSection() {
           <span className="mb-4 inline-block rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm">
             Technical Expertise
           </span>
-          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
@@ -119,7 +119,7 @@ export function SkillsSection() {
         </motion.div>
 
         {/* Skill cards grid */}
-        <div className="mb-16 grid gap-6 md:grid-cols-2">
+        <div className="mb-12 grid gap-4 sm:mb-16 sm:gap-6 md:grid-cols-2">
           {skillCategories.map((category, index) => (
             <SpotlightCard
               key={index}

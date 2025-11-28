@@ -40,7 +40,7 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-3 sm:px-6 sm:py-4">
           {/* Desktop navigation */}
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item, index) => (
@@ -86,9 +86,9 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[72px] z-40 bg-background/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 top-[65px] z-40 bg-background/95 backdrop-blur-xl md:hidden sm:top-[72px]"
           >
-            <div className="flex flex-col items-center gap-4 px-6 py-8">
+            <div className="flex flex-col items-center gap-4 px-4 py-6 sm:px-6 sm:py-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={index}

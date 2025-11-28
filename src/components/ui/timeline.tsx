@@ -22,7 +22,7 @@ export function Timeline({ items, className }: TimelineProps) {
   return (
     <div className={cn("relative", className)}>
       {/* Timeline line */}
-      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-primary via-accent to-muted md:left-8" />
+      <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-primary via-accent to-muted md:left-8" />
 
       <div className="space-y-12">
         {items.map((item, index) => (
@@ -36,7 +36,7 @@ export function Timeline({ items, className }: TimelineProps) {
 function TimelineEntry({ item, index }: { item: TimelineItem; index: number }) {
   return (
     <motion.div
-      className="relative pl-8 md:pl-20"
+      className="relative pl-6 md:pl-20"
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -44,7 +44,7 @@ function TimelineEntry({ item, index }: { item: TimelineItem; index: number }) {
     >
       {/* Timeline dot */}
       <motion.div
-        className="absolute left-0 top-2 flex h-4 w-4 items-center justify-center md:left-6"
+        className="absolute left-1 top-2 flex h-4 w-4 items-center justify-center md:left-6"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
@@ -55,7 +55,7 @@ function TimelineEntry({ item, index }: { item: TimelineItem; index: number }) {
       </motion.div>
 
       {/* Content */}
-      <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+      <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 sm:p-6">
         {/* Spotlight effect */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -63,7 +63,7 @@ function TimelineEntry({ item, index }: { item: TimelineItem; index: number }) {
           {/* Header */}
           <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="text-base font-semibold text-foreground sm:text-lg">
                 {item.title}
               </h3>
               {item.companyUrl ? (

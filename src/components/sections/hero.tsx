@@ -10,14 +10,15 @@ import {
   IconBrandDocker, 
   IconBrandAws, 
   IconDatabase, 
-  IconBrain 
+  IconBrain,
+  IconCalendar
 } from "@tabler/icons-react";
 
 export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20 sm:px-6"
     >
       {/* Background effects */}
       <GridBackground />
@@ -47,7 +48,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
           >
             <span className="text-foreground">Hi, I&apos;m </span>
             <span className="gradient-text">Saksham Goyal</span>
@@ -56,7 +57,7 @@ export function HeroSection() {
           {/* Role */}
           <TextReveal
             text="Senior Software Engineer - AI + Backend"
-            className="mb-6 text-xl text-muted-foreground sm:text-2xl"
+            className="mb-6 text-lg text-muted-foreground sm:text-xl md:text-2xl"
             delay={0.3}
           />
 
@@ -65,7 +66,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mb-8 max-w-xl text-base text-muted-foreground sm:text-lg"
+            className="mb-8 max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg"
           >
             Building intelligent systems at the intersection of AI and scalable
             backend architecture. Specialized in GenAI-powered products, agentic
@@ -77,17 +78,26 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <a
-              href="#contact"
-              className="glow-primary group relative overflow-hidden rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground transition-all duration-300 hover:scale-105"
+              href="https://cal.com/isakshamgoyal/book-a-meet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glow-primary group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-primary px-6 py-3 text-center text-sm font-medium text-primary-foreground transition-all duration-300 hover:scale-105 sm:text-base"
             >
-              <span className="relative z-10">Get in Touch</span>
+              <IconCalendar className="h-4 w-4" />
+              <span className="relative z-10">Book a Meeting</span>
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full border border-border bg-card/50 px-6 py-3 text-center text-sm font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card sm:text-base"
+            >
+              Get in Touch
             </a>
             <a
               href="#experience"
-              className="rounded-full border border-border bg-card/50 px-6 py-3 font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card"
+              className="rounded-full border border-border bg-card/50 px-6 py-3 text-center text-sm font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card sm:text-base"
             >
               View Experience
             </a>
@@ -98,21 +108,21 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="mt-12 flex flex-wrap items-center gap-8"
+            className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:mt-12 sm:gap-6 md:gap-8"
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-foreground">4+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="text-2xl font-bold text-foreground sm:text-3xl">5+</div>
+              <div className="text-xs text-muted-foreground sm:text-sm">Years Experience</div>
             </div>
-            <div className="h-12 w-px bg-border" />
+            <div className="hidden h-10 w-px bg-border sm:block md:h-12" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-foreground">500K+</div>
-              <div className="text-sm text-muted-foreground">Monthly Interactions</div>
+              <div className="text-2xl font-bold text-foreground sm:text-3xl">500K+</div>
+              <div className="text-xs text-muted-foreground sm:text-sm">Monthly Interactions</div>
             </div>
-            <div className="h-12 w-px bg-border" />
+            <div className="hidden h-10 w-px bg-border sm:block md:h-12" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-foreground">100K+</div>
-              <div className="text-sm text-muted-foreground">MAU</div>
+              <div className="text-2xl font-bold text-foreground sm:text-3xl">100K+</div>
+              <div className="text-xs text-muted-foreground sm:text-sm">MAU</div>
             </div>
           </motion.div>
         </div>
@@ -163,29 +173,6 @@ export function HeroSection() {
           </OrbitingCircles>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-xs text-muted-foreground">Scroll</span>
-          <div className="h-6 w-4 rounded-full border border-muted-foreground p-1">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="h-1.5 w-1.5 rounded-full bg-muted-foreground"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

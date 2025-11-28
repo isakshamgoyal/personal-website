@@ -6,7 +6,7 @@ import { IconSchool, IconCertificate } from "@tabler/icons-react";
 
 export function EducationSection() {
   return (
-    <section id="education" className="relative px-6 py-24">
+    <section id="education" className="relative px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-4xl">
         {/* Section header */}
         <motion.div
@@ -19,19 +19,19 @@ export function EducationSection() {
           <span className="mb-4 inline-block rounded-full border border-border bg-card/50 px-4 py-2 text-sm text-muted-foreground backdrop-blur-sm">
             Academic Background
           </span>
-          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
             <span className="gradient-text">Education</span>
           </h2>
         </motion.div>
 
         {/* Education card */}
         <SpotlightCard className="mx-auto max-w-2xl">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
             <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 text-primary">
               <IconSchool className="h-8 w-8" />
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-lg font-semibold text-foreground sm:text-xl">
                 Bachelor of Technology - Computer Science
               </h3>
               <p className="mt-1 text-primary">BML Munjal University</p>

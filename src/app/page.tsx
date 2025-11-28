@@ -6,40 +6,6 @@ import { ProjectsSection } from "@/components/sections/projects";
 import { EducationSection } from "@/components/sections/education";
 import { ContactSection } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
-import { FloatingDock, DockItem } from "@/components/ui/floating-dock";
-import {
-  IconHome,
-  IconBriefcase,
-  IconCode,
-  IconRocket,
-  IconSchool,
-  IconMail,
-} from "@tabler/icons-react";
-
-const dockItems: DockItem[] = [
-  { title: "Home", icon: <IconHome className="h-5 w-5" />, href: "#home" },
-  {
-    title: "Experience",
-    icon: <IconBriefcase className="h-5 w-5" />,
-    href: "#experience",
-  },
-  { title: "Skills", icon: <IconCode className="h-5 w-5" />, href: "#skills" },
-  {
-    title: "Projects",
-    icon: <IconRocket className="h-5 w-5" />,
-    href: "#projects",
-  },
-  {
-    title: "Education",
-    icon: <IconSchool className="h-5 w-5" />,
-    href: "#education",
-  },
-  {
-    title: "Contact",
-    icon: <IconMail className="h-5 w-5" />,
-    href: "#contact",
-  },
-];
 
 export default function Home() {
   return (
@@ -52,7 +18,6 @@ export default function Home() {
       <EducationSection />
       <ContactSection />
       <Footer />
-      <FloatingDock items={dockItems} />
     </main>
   );
 }

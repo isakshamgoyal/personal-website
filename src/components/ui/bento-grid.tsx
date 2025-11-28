@@ -12,7 +12,7 @@ export function BentoGrid({ className, children }: BentoGridProps) {
   return (
     <div
       className={cn(
-        "grid auto-rows-[18rem] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3",
+        "grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3",
         className
       )}
     >
@@ -39,7 +39,7 @@ export function BentoGridItem({
   return (
     <motion.div
       className={cn(
-        "group relative row-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5",
+        "group relative row-span-1 flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card p-4 pb-5 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 sm:p-6 sm:pb-7",
         className
       )}
       initial={{ opacity: 0, y: 20 }}
@@ -52,17 +52,17 @@ export function BentoGridItem({
       
       {header && <div className="relative z-10">{header}</div>}
       
-      <div className="relative z-10 mt-auto">
+      <div className="relative z-10 mt-auto pb-1">
         {icon && (
           <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
             {icon}
           </div>
         )}
         {title && (
-          <h3 className="mb-2 font-semibold text-foreground">{title}</h3>
+          <h3 className="mb-2 text-sm font-semibold text-foreground sm:text-base">{title}</h3>
         )}
         {description && (
-          <p className="text-sm text-muted-foreground">{description}</p>
+          <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">{description}</p>
         )}
       </div>
     </motion.div>
